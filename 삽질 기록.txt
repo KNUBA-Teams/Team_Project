@@ -1,0 +1,10 @@
+22.05.04 
+    .gitignore 파일 생성
+
+    venv를 설치할때 파이썬의 위치를 알려주는 pyvenv.cfg를 생성하게되는데 여기서 PATH가 컴퓨터에 따라 다르게 설정됨
+    따라서 venv를 git에 공유하여 pull을 통해 가상 환경을 가져와도 pip나 ipynb커널이 없는 등 오류가 발생
+    이를 해결하기 위해서는 2가지 방법이 있음
+        1. .gitignore 파일을 통해서 venv 폴더를 공유하지않고 본인의 venv를 직접 관리
+        2. git애서 pull을 해올 때 마다 powershell에서 venv를 다시 설치
+    본 프로젝트에서 1번 방법을 통해 해결하기로 함
+
