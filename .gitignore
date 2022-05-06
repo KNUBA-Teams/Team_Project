@@ -20,3 +20,4 @@ pip-selfcheck.json
 # End of https://www.toptal.com/developers/gitignore/api/venv
 
 daegu.csv
+daegu_pre.csv
