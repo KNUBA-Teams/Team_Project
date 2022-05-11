@@ -20,3 +20,7 @@ pip-selfcheck.json
 # End of https://www.toptal.com/developers/gitignore/api/venv
 
 output
+dataset/Busan
+dataset/Cheongju
+dataset/Chuncheon
+dataset/Daejeon
