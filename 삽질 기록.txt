@@ -8,3 +8,23 @@
         2. git애서 pull을 해올 때 마다 powershell에서 venv를 다시 설치
     본 프로젝트에서 1번 방법을 통해 해결하기로 함
 
+
+22.05.23 Updated by JW
+
+    Geopandas 설치 과정
+    
+    1) Geopandas가 상당히 복잡한 라이브러리기 때문에 설치에 상당한 시간을 소요함
+    2) 반드시 **Pyproj -> Shapely -> GDAL -> Fiona -> geopandas** 순서대로 설치하고 Import 해야함
+    3) 설치 과정에서 응용한 Anaconda Prompt를 VS Code 연결 방법은 따로 기재함
+     - 링크 : https://koreapy.tistory.com/1083
+     - 메모 : 굳이 이 방법이 아니어도 가능함
+    4) https://www.lfd.uci.edu/~gohlke/pythonlibs/ 에서 whl 파일을 받아야 함
+    5) 현재 우리가 작업하는 가상 환경에서의 파이썬 버전은 3.10.4
+    6) 각 whl파일 이름 사이에 있는 cp310을 확인한다 (CP = 파이썬 버전)
+    7) 그 후 주피터 셀에서 wheel을 설치 및 import 해준다
+    8) Pyproj -> Shapely -> GDAL -> Fiona -> geopandas 순서대로 설치하는데 이때 다운로드 받은 whl 파일명을 전부 입력한다.
+     - 예시 : pip install wheel/GDAL-3.4.3-cp310-cp310-win_amd64.whl
+     - 메모 : GDAL / Fiona / geopandas 3개가 좀 까다로움 나머지 2개는 설치 잘 됨
+    9) import에서 Pyproj -> Shapely -> GDAL -> Fiona -> geopandas 순서를 반복
+    10) 아마 GDAL에서 문제가 발생할 수 있음 주의 요함
+    
