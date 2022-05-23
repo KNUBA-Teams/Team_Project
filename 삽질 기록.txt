@@ -26,5 +26,5 @@
      - 예시 : pip install wheel/GDAL-3.4.3-cp310-cp310-win_amd64.whl
      - 메모 : GDAL / Fiona / geopandas 3개가 좀 까다로움 나머지 2개는 설치 잘 됨
     9) import에서 Pyproj -> Shapely -> GDAL -> Fiona -> geopandas 순서를 반복
-    10) 아마 GDAL에서 문제가 발생할 수 있음 주의 요함
+    10) 아마 GDAL에서 문제가 발생할 수 있음. 주의 요함
     
