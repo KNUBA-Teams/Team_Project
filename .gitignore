@@ -21,6 +21,7 @@ pip-selfcheck.json
 
 output
 dataset/Busan
+dataset/Daegu
 dataset/Cheongju
 dataset/Chuncheon
 dataset/Daejeon
@@ -28,3 +29,4 @@ dataset/Electrocity
 installing_modules.ipynb
 area
 __pycache__
+EH
