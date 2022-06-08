@@ -9,12 +9,12 @@
         }
 
         #body-content {
-            padding-bottom: 100px; /* footer의 높이 */
+            padding-bottom: 75px; /* footer의 높이 */
         }
 
         #footer {
             width: 100%;
-            height: 100px; /* footer의 높이 */
+            height: 75px; /* footer의 높이 */
             position: absolute;
             font-size: 13px;
             bottom: 0;
@@ -31,8 +31,6 @@
             width: 49.7%;
             min-height: 300px;
             height: 100%;
-            background-color: #ff0000;
-            color: #0000ff;
             text-align: center;
             float: left;
         }
@@ -41,10 +39,21 @@
             width: 49.7%;
             min-height: 300px;
             height: 100%;
-            background-color: #0000ff;
-            color: #ff0000;
             text-align: center;
             float: right;
+        }
+
+        #screen_left{
+            width: 33.3%;
+            height: 400px;
+            text-align: center;
+            float: left;
+        }
+
+        #screen_person{
+            width: 100%;
+            height: 200px;
+            text-align: center;
         }
 
         body {
@@ -114,7 +123,11 @@
         #tab4:checked ~ #content4,
         #tab5:checked ~ #content5,
         #tab6:checked ~ #content6,
-        #tab7:checked ~ #content7 {
+        #tab7:checked ~ #content7,
+        #tab8:checked ~ #content8,
+        #tab9:checked ~ #content9,
+        #tab10:checked ~ #content10,
+        #tab11:checked ~ #content11 {
             display: block;}
     </style>
     <title>대구 폭염 예측 SYSTEM</title>
@@ -156,50 +169,143 @@
                 <input id="tab7" type="radio" name="tabs">
                 <label for="tab7">가설 6</label>
 
+                <input id="tab8" type="radio" name="tabs">
+                <label for="tab8">가설 7</label>
+
+                <input id="tab9" type="radio" name="tabs">
+                <label for="tab9">가설 8</label>
+
+                <input id="tab10" type="radio" name="tabs">
+                <label for="tab10">가설 9</label>
+
+                <input id="tab11" type="radio" name="tabs">
+                <label for="tab11">조원</label>
+
                 <section id="content1">
-                    <div id="screen1">
-                        김형우의 빨간색에 한표
+                    <div id="screen1" style="background-color: #ececff; color: #0000ff;">
+                        예측
                     </div>
-                    <div id="screen2">
-                        김형우의 파란색에 한표
+                    <div id="screen2" style="background-color: #ececff; color: #0000ff;">
+                        상세 예측 정보
                     </div>
                 </section>
 
                 <section id="content2">
                     <p>
-                        <img src="static/1.jpg" alt="My Image" width="1420" height="500">
+                        <img src="static/white.png" alt="My Image" width="1420" height="500">
                     </p>
                 </section>
 
                 <section id="content3">
                     <p>
-                        <img src="static/김형우2.jpg" alt="My Image" width="300" height="500">
+                        <img src="static/white.png" alt="My Image" width="300" height="500">
                     </p>
                 </section>
 
                 <section id="content4">
                     <p>
-                        <img src="static/jht.png" alt="My Image" width="500" height="300">
-                        <a href="http://pf.kakao.com/_ydGib"> 알리냥 구독 부탁드려요~ </a>
-                        
+                        <img src="static/white.png" alt="My Image" width="500" height="300">
                     </p>
                 </section>
 
                 <section id="content5">
                     <p>
-                        <img src="static/khw2.jpg" alt="My Image" width="300" height="500">
+                        <img src="static/white.png" alt="My Image" width="200" height="400">
                     </p>
                 </section>
 
                 <section id="content6">
                     <p>
-                        <img src="static/khw3.jpg" alt="My Image" width="300" height="500">
+                        <img src="static/white.png" alt="My Image" width="300" height="500">
                     </p>
                 </section>
 
                 <section id="content7">
                     <p>
-                        <img src="static/khw.jpg" alt="My Image" width="500" height="300">
+                        <img src="static/white.png" alt="My Image" width="500" height="300">
+                    </p>
+                </section>
+
+                <section id="content8">
+                    <p>
+                        <img src="static/white.png" alt="My Image" width="500" height="300">
+                    </p>
+                </section>
+
+                <section id="content9">
+                    <p>
+                        <img src="static/white.png" alt="My Image" width="500" height="300">
+                    </p>
+                </section>
+
+                <section id="content10">
+                    <p>
+                        <img src="static/white.png" alt="My Image" width="500" height="300">
+                    </p>
+                </section>
+
+                <section id="content11">
+                    <p>
+                        <div id="screen_left">
+                            <div id="screen_person" style="background-color: #ececff; color: #0000ff;">
+                                <b>구민지</b><br>
+                                <div style="float: left; margin-left: 10px; margin-right: 10px;">
+                                    <img src="static/KMJ.jpg" alt="KMJ" width="150" height="170px">
+                                </div>
+                                <div style="float: left; color:#5555ff; text-align: left;">
+                                    역할<br>가설1,2,3,4,5,6,7,8,9,10<br>모델링<br>사무<br>술
+                                </div>
+                            </div>
+                            <div id="screen_person" style="background-color: #ffffff; color: #0000ff;">
+                                <b>서석정</b><br>
+                                <div style="float: left; margin-left: 10px; margin-right: 10px;">
+                                    <img src="static/SSJ.jpg" alt="SSJ" width="150" height="170px">
+                                </div>
+                                <div style="float: left; color:#5555ff; text-align: left;">
+                                    역할<br>가설1,2,3,4,5,6,7,8,9,10<br>모델링<br>취침<br>잠
+                                </div>
+                            </div>
+                        </div>
+                        <div id="screen_left">
+                            <div id="screen_person" style="background-color: #ffffff; color: #0000ff;">
+                                <b>김형우</b><br>
+                                <div style="float: left; margin-left: 10px; margin-right: 10px;">
+                                    <img src="static/KHW2.jpg" alt="KHW" width="150px" height="170px">
+                                </div>
+                                <div style="float: left; color:#5555ff; text-align: left;">
+                                    역할<br>가설1,2,3,4,5,6,7,8,9,10<br>모델링<br>사무<br>술
+                                </div>
+                            </div>
+                            <div id="screen_person" style="background-color: #ececff; color: #0000ff;">
+                                <b>이은혜</b><br>
+                                <div style="float: left; margin-left: 10px; margin-right: 10px;">
+                                    <img src="static/LEH.jpg" alt="LEH" width="150" height="170px">
+                                </div>
+                                <div style="float: left; color:#5555ff; text-align: left;">
+                                    역할<br>가설1,2,3,4,5,6,7,8,9,10<br>모델링<br>사무<br>술
+                                </div>
+                            </div>
+                        </div>
+                        <div id="screen_left">
+                            <div id="screen_person" style="background-color: #ececff; color: #0000ff;">
+                                <b>박종원</b><br>
+                                <div style="float: left; margin-left: 10px; margin-right: 10px;">
+                                    <img src="static/PJW.jpg" alt="PJW" width="150" height="170px">
+                                </div>
+                                <div style="float: left; color:#5555ff; text-align: left;">
+                                    역할<br>집에 가고 싶다<br>프로젝트<br>작업<br>일
+                                </div>
+                            </div>
+                            <div id="screen_person" style="background-color: #ffffff; color: #0000ff;">
+                                <b>임낙현</b><br>
+                                <div style="float: left; margin-left: 10px; margin-right: 10px;">
+                                    <img src="static/LNH.jpg" alt="LNH" width="150" height="170px">
+                                </div>
+                                <div style="float: left; color:#5555ff; text-align: left;">
+                                    역할<br>가설1,2,3,4,5,6,7,8,9,10<br>모델링<br>사무<br>술
+                                </div>
+                            </div>
+                        </div>
                     </p>
                 </section>
 
@@ -207,8 +313,7 @@
         </div>
         <div id="footer">
             대구 북구 대학로 80 ( 산격동 1370-1 ) 글로벌플라자 303호<br>
-            대표 : 경북대학교 빅데이터 분석가 양성과정 1기 1조 K-워터파크 キムラ·ヒョンウ<br>
-            대표번호 : 010-6240-6150  대표 e-mail : cowofbrother@gmail.com<br>
+            대표 : 경북대학교 빅데이터 분석가 양성과정 1기 1조 K-워터파크<br>
             Copyrightⓒ2022.경북대학교 빅데이터 분석가 양성과정 1조 K-워터파크. All rights reserved.
         </div>
     </div>
