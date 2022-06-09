@@ -183,16 +183,38 @@
 
                 <section id="content1">
                     <div id="screen1" style="background-color: #ececff; color: #0000ff;">
-                        예측
+                        예측<br>예상 기온 = {{ tempreture }}
                     </div>
                     <div id="screen2" style="background-color: #ececff; color: #0000ff;">
-                        상세 예측 정보
+                        상세 예측 정보<br>
+                        시군구 선택 : 
+                        <select class="form-control" style="color: white; background: #34568B;" id="all_classes">
+                            {% for o in all_classes %}
+                                <option value="{{ o }}">{{ o }}</option>
+                            {% endfor %}
+                        </select>
+                        읍면동 선택 : 
+                        <select class="form-control" style="color:white; background:#009B77;" id="all_entries">
+                            {% for o in all_entries %}
+                                <option value="{{ o }}">{{ o }}</option>
+                            {% endfor %}
+                        </select>
+                        <button type="button" style="color:white; background:#3498DB;" id="process_input">선택완료</button>
+                        <br><br>
+                        <div id="processed_results">
+                                Here we display some output based on the selection
+                        </div>
                     </div>
                 </section>
 
                 <section id="content2">
                     <p>
-                        <img src="static/white.png" alt="My Image" width="1420" height="500">
+                        <div>
+                            <iframe allowfullscreen="True" 
+                            title="데이터 비주얼리제이션" style="display: block; width: 1400px; height: 1127px; visibility: visible;"
+                            src="https://public.tableau.com/views/3_16461884996500/2?:language=ko-KR&:display_count=n&:origin=viz_share_link:showVizHome=no:embed=true"
+                            ></iframe>
+                        </div>
                     </p>
                 </section>
 
@@ -253,7 +275,7 @@
                                     <img src="static/KMJ.jpg" alt="KMJ" width="150" height="170px">
                                 </div>
                                 <div style="float: left; color:#5555ff; text-align: left;">
-                                    역할<br>가설1,2,3,4,5,6,7,8,9,10<br>모델링<br>사무<br>술
+                                    역할<br>&nbsp-가설4,8,9<br>&nbsp-모델링<br>&nbsp-취침<br>&nbsp-술
                                 </div>
                             </div>
                             <div id="screen_person" style="background-color: #ffffff; color: #0000ff;">
@@ -262,7 +284,7 @@
                                     <img src="static/SSJ.jpg" alt="SSJ" width="150" height="170px">
                                 </div>
                                 <div style="float: left; color:#5555ff; text-align: left;">
-                                    역할<br>가설1,2,3,4,5,6,7,8,9,10<br>모델링<br>취침<br>잠
+                                    역할<br><br>모델링<br>취침<br>-던-
                                 </div>
                             </div>
                         </div>
@@ -273,7 +295,7 @@
                                     <img src="static/KHW2.jpg" alt="KHW" width="150px" height="170px">
                                 </div>
                                 <div style="float: left; color:#5555ff; text-align: left;">
-                                    역할<br>가설1,2,3,4,5,6,7,8,9,10<br>모델링<br>사무<br>술
+                                    역할<br>가설2<br>모델링<br>짜장<br>카레
                                 </div>
                             </div>
                             <div id="screen_person" style="background-color: #ececff; color: #0000ff;">
@@ -282,7 +304,7 @@
                                     <img src="static/LEH.jpg" alt="LEH" width="150" height="170px">
                                 </div>
                                 <div style="float: left; color:#5555ff; text-align: left;">
-                                    역할<br>가설1,2,3,4,5,6,7,8,9,10<br>모델링<br>사무<br>술
+                                    역할<br>가설3,10<br>모델링<br>사무<br>달팽이
                                 </div>
                             </div>
                         </div>
@@ -293,7 +315,7 @@
                                     <img src="static/PJW.jpg" alt="PJW" width="150" height="170px">
                                 </div>
                                 <div style="float: left; color:#5555ff; text-align: left;">
-                                    역할<br>가설1,2,3,4,5,6,7,8,9,10<br>모델링<br>사무<br>술
+                                    역할<br>가설5<br>모델링<br>집에가고싶다<br>목아파
                                 </div>
                             </div>
                             <div id="screen_person" style="background-color: #ffffff; color: #0000ff;">
@@ -302,7 +324,7 @@
                                     <img src="static/LNH.jpg" alt="LNH" width="150" height="170px">
                                 </div>
                                 <div style="float: left; color:#5555ff; text-align: left;">
-                                    역할<br>가설1,2,3,4,5,6,7,8,9,10<br>모델링<br>사무<br>술
+                                    역할<br>가설1<br>모델링<br>술<br>소주
                                 </div>
                             </div>
                         </div>
@@ -317,7 +339,35 @@
             Copyrightⓒ2022.경북대학교 빅데이터 분석가 양성과정 1조 K-워터파크. All rights reserved.
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+  
+            $('#all_classes').change(function(){
     
+                $.getJSON('/_update_dropdown', {
+                selected_class: $('#all_classes').val()
+    
+                }).success(function(data) {
+                    $('#all_entries').html(data.html_string_selected);
+                })
+            });
+            $('#process_input').bind('click', function() {
+    
+                $.getJSON('/_process_data', {
+                    selected_class: $('#all_classes').val(),
+                    selected_entry: $('#all_entries').val(),
+    
+    
+                }).success(function(data) {
+                    $('#processed_results').text(data.random_text);
+                })
+                return false;
+    
+            });
+        });
+      </script>
 </body>
 
 </html>
