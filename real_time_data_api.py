@@ -15,7 +15,7 @@ def str_2words(word):
 df = pd.read_csv('./output/Daegu_data.csv', encoding='cp949')
 
 # 읍면동과 위치 데이터
-df_daegu = pd.read_excel('./dataset/daegu_regionXY.xlsx')
+df_daegu = pd.read_csv('./dataset/daegu_regionXY.csv', encoding='cp949')
 df_daegu.dropna(inplace=True)
 drop_list = df_daegu[df_daegu['1단계'] != '대구광역시'].index
 df_daegu.drop(drop_list, inplace=True)
