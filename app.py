@@ -5,9 +5,6 @@ import datetime
 app = Flask(__name__)
 app.config["SECRET_KEY"] = 'd2707fea9778e085491e2dbbc73ff30e'
 
-df = pd.read_csv('./output/Daegu_data.csv', encoding='cp949')
-tempreture = df.loc[len(df)-1,'temp']
-
 def get_dropdown_values():
     class_entry_relations = {
 		'중구':{'동인동','삼덕동','성내1동','성내2동','성내3동','대신동','남산1동','남산2동','남산3동','남산4동','대봉1동','대봉2동'},

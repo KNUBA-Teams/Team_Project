@@ -12,7 +12,7 @@ def str_2words(word):
     return word
 
 # 기존의 데이터 불러오기
-df = pd.read_csv('./output/Deagu_data.csv', encoding='cp949')
+df = pd.read_csv('./output/Daegu_data.csv', encoding='cp949')
 
 # 읍면동과 위치 데이터
 df_daegu = pd.read_excel('./dataset/daegu_regionXY.xlsx')
