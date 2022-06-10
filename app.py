@@ -1,14 +1,12 @@
-from flask_wtf import Form
+import pandas as pd
 from flask import Flask, render_template, request, jsonify
-from wtforms import SelectField
+import datetime
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = 'd2707fea9778e085491e2dbbc73ff30e'
 
-tempreture = 0
-
-class ContactForm(Form):
-	sgg = SelectField(name = "SGG", choices = ['중구','동구','서구','남구','북구','수성구','달서구','달성군'])
+df = pd.read_csv('./output/Daegu_data.csv', encoding='cp949')
+tempreture = df.loc[len(df)-1,'temp']
 
 def get_dropdown_values():
     class_entry_relations = {
@@ -31,19 +29,16 @@ def get_dropdown_values():
 
 @app.route('/_update_dropdown')
 def update_dropdown():
-    # the value of the first dropdown (selected by the user)
+    # 자바스크립트에서 현재 선택된 항목 읽어옴
     selected_class = request.args.get('selected_class', type=str)
-
-    # get values for the second dropdown
+    # 선택된 항목에서 사용되는 dropdown의 항목을 읽어오기
     updated_values = get_dropdown_values()[selected_class]
-
-    # create the value sin the dropdown as a html string
+    # 리스트 형식에서 JSON 형태로 변경
     html_string_selected = ''
     for entry in updated_values:
         html_string_selected += '<option value="{}">{}</option>'.format(entry, entry)
-
+	# JSON으로 반환
     return jsonify(html_string_selected=html_string_selected)
-
 
 @app.route('/_process_data')
 def process_data():
@@ -53,16 +48,13 @@ def process_data():
 
 @app.route('/')
 def home():
-	# form = ContactForm()
-	# if request.form.get("SGG") == '남구':
-	# 	tempreture = 36.5
-	# else:
-	# 	tempreture = 0
-
+	df = pd.read_csv('./output/Daegu_data.csv', encoding='cp949')
+	now_temp = df.loc[len(df)-1,'temp']
+	now = str(datetime.datetime.now())
 	default_classes = ['중구','동구','서구','남구','북구','수성구','달서구','달성군']
 	default_value = get_dropdown_values()['중구']
 
-	return render_template('layout.html', tempreture = tempreture, all_classes=default_classes, all_entries=default_value)
+	return render_template('layout.html', now_temp = now_temp, all_classes=default_classes, all_entries=default_value, now=now)
 
 if __name__ == '__main__':
 	app.run(debug=True)
