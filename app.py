@@ -45,7 +45,7 @@ def process_data():
 
 @app.route('/')
 def home():
-	df = pd.read_csv('./output/Daegu_data.csv', encoding='cp949')
+	df = pd.read_csv('./output/Daegu_data.csv')
 	now_temp = df.loc[len(df)-1,'temp']
 	now = str(datetime.datetime.now())
 	default_classes = ['중구','동구','서구','남구','북구','수성구','달서구','달성군']
