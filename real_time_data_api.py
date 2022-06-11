@@ -12,10 +12,10 @@ def str_2words(word):
     return word
 
 # 기존의 데이터 불러오기
-df = pd.read_csv('./output/Daegu_data.csv', encoding='cp949')
+df = pd.read_csv('./output/Daegu_data.csv')
 
 # 읍면동과 위치 데이터
-df_daegu = pd.read_csv('./dataset/daegu_regionXY.csv', encoding='cp949')
+df_daegu = pd.read_csv('./dataset/daegu_regionXY.csv')
 df_daegu.dropna(inplace=True)
 drop_list = df_daegu[df_daegu['1단계'] != '대구광역시'].index
 df_daegu.drop(drop_list, inplace=True)
@@ -67,7 +67,7 @@ while(True):
             df.loc[len(df)] = [base_year,base_month,base_day,base_time,temp,rain,hum,wind_speed,wind_direction,region]
         
         # DF를 local에 저장
-        df.to_csv('./output/Daegu_data.csv', index=False, encoding='cp949')
+        df.to_csv('./output/Daegu_data.csv', index=False)
 
         # 실행 문구 출력
         print(datetime.datetime.now(), ':', base_time, 'h data addition is success')
