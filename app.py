@@ -1,9 +1,14 @@
 import pandas as pd
 from flask import Flask, render_template, request, jsonify
 import datetime
+import folium
+import json
+from folium import Marker
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = 'd2707fea9778e085491e2dbbc73ff30e'
+
+start_coords = [35.8, 128.6]
 
 def get_dropdown_values():
     class_entry_relations = {
@@ -51,7 +56,28 @@ def home():
 	default_classes = ['중구','동구','서구','남구','북구','수성구','달서구','달성군']
 	default_value = get_dropdown_values()['중구']
 
-	return render_template('layout.html', now_temp = now_temp, all_classes=default_classes, all_entries=default_value, now=now)
+	m = folium.Map(location=start_coords, zoom_start=10, tiles='cartodbpositron')
+	rr = json.load(open('dataset/HangJeongDong.geojson', encoding='utf-8'))
+	folium.GeoJson(rr, name='지역구').add_to(m)
+	df_daegu=df.iloc[-142:-1,:]
+	for lat, long, region, temp in zip(df_daegu['lat'], df_daegu['long'], df_daegu['region'], df_daegu['temp']):
+		if temp > 30:
+			Marker([lat, long], icon = folium.Icon(color='red'), popup=str(temp)+'℃ '+region).add_to(m)
+		elif temp > 25:
+			Marker([lat, long], icon = folium.Icon(color='green'), popup=str(temp)+'℃ '+region).add_to(m)
+		elif temp > 20:
+			Marker([lat, long], icon = folium.Icon(color='blue'), popup=str(temp)+'℃ '+region).add_to(m)
+		else:
+			Marker([lat, long], icon = folium.Icon(color='white'), popup=str(temp)+'℃ '+region).add_to(m)
+		
+
+	return render_template('layout.html', 
+							now_temp = now_temp, 
+							all_classes=default_classes,
+							all_entries=default_value,
+							now=now,
+							map=m._repr_html_()
+							)
 
 if __name__ == '__main__':
 	app.run(debug=True)

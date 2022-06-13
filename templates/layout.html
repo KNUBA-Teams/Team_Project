@@ -21,15 +21,28 @@
 
                 <div class="coop-logo-container">
                     <div class="coop-logo">
-                        <div class="knu">KNU</div>
-                        <div class="winitec">WINITEC</div>
+                        <div class="knu">
+                            <a href="http://www.knu.ac.kr" target="_blank">
+                                <img src="static/knu.png" alt="knu" width="100px">
+                            </a>
+                        </div>
+                        <div class="winitec">
+                            <a href="http://www.winitech.com" target="_blank">
+                                <img src="static/winitech.jpg" alt="winitech" width="100px">
+                            </a>
+                        </div>
+                        <div class="kma">
+                            <a href="http://www.kma.go.kr" target="_blank">
+                                <img src="static/kma.png" alt="kma" width="100px">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <hr noshade style="background:#c7d8ff; border-color:#c7d8ff">
 
-            <div class="main" style="margin: 0px 70px 0px 70px">
+            <div class="main" style="margin: 0px 70px 50px 70px">
                 <input id="tab1" type="radio" name="tabs" checked> <!--디폴트 메뉴-->
                 <label for="tab1">Main</label>
 
@@ -63,13 +76,14 @@
                 <input id="tab11" type="radio" name="tabs">
                 <label for="tab11">조원</label>
 
-                <section id="content1">
-                    <div id="screen1" style="background-color: #ececff; color: #0000ff;">
+                <section id="content1" style="overflow: hidden;">
+                    <div id="screen1" style="background-color: #ececff; color: #0000ff; margin-bottom: 30px">
                         <!--flask에서 tempreture 읽어와서 보여줌-->
                         현재 시각 : {{ now }}<br>
                         예측<br>현재 기온 = {{ now_temp }}
+                        {{ map | safe }}
                     </div>
-                    <div id="screen2" style="background-color: #ececff; color: #0000ff;">
+                    <div id="screen2" style="color: #0000ff;">
                         상세 예측 정보<br>
                         <!--시군구 선택박스-->
                         시군구 선택 : 
