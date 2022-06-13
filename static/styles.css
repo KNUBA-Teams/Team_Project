@@ -1,0 +1,283 @@
+@font-face {
+    font-family: 'nanumsquare';
+    src: url('static/NanumSquareR.ttf');
+}
+
+
+/* 상단부 */
+
+.title {
+    margin-top: 5px;
+    margin-left: 100px;
+    margin-right: 100px;
+    height: 135px;
+    line-height: 135px;
+    width: auto;
+}
+
+.title-txt-container {
+    line-height: 135px;
+    float: left;
+}
+
+.title-txt {
+    display: inline-block;
+    line-height: 135px;
+    vertical-align: middle;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 38px;
+    font-weight: 900;
+    line-height: normal;
+}  
+
+h2 {
+    margin: 0;
+    font-size: 18px;
+    color: dimgray;
+    font-weight:500;
+    line-height: normal;
+}
+
+#logo {
+    vertical-align: middle;
+    float: left;
+}
+
+.coop-logo-container {
+    display: inline-block;
+    line-height: 135px;
+    text-align: right;
+    float: right;
+}
+
+.coop-logo {
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+}
+
+.knu {
+    color: red;
+}
+
+.winitec {
+    color: #2685c1;
+}
+
+.body-middle-blank {
+    height: 1px;
+    float: left;
+}
+
+/* 바디 */
+
+#body-wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+#body-content {
+    padding-bottom: 75px;
+}
+
+#screen1{
+    width: 49.7%;
+    min-height: 300px;
+    height: 100%;
+    text-align: center;
+    float: left;
+}
+
+#screen2{
+    width: 49.7%;
+    min-height: 300px;
+    height: 100%;
+    text-align: center;
+    float: left;
+}
+
+body {
+color: #555;
+background: #ffffff;
+margin:0;
+padding: 0;
+box-sizing: border-box;}
+
+p {
+margin: 0 0 20px;
+line-height: 1.5;}
+
+.main {
+min-width: 320px;
+max-width: 100%;
+padding: 0;
+margin: 0 auto;
+}
+
+section {
+display: none;
+padding: 20px 0 0;
+border-top: 1px solid #c7d8ff;
+background: #ffffff;
+min-height: 380px;
+height: 100%;
+width: 100%
+}
+
+
+/*라디오버튼 숨김*/
+input {
+display: none;
+}
+
+label {
+display: inline-block;
+margin: 0 0 -1px;
+padding: 15px 25px;
+font-weight: 600;
+text-align: center;
+color: #bbb;
+border: 1px solid transparent;
+}
+
+label:hover {
+color: #2e9cdf;
+cursor: pointer;
+}
+
+/*input 클릭시, label 스타일*/
+input:checked + label {
+color: #2685c1;
+border: 1px solid #c7d8ff;
+border-top: 2px solid #2e9cdf;
+border-bottom: 1px solid #ffffff;
+border-top-left-radius: 6px;
+border-top-right-radius: 6px;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5,
+#tab6:checked ~ #content6,
+#tab7:checked ~ #content7,
+#tab8:checked ~ #content8,
+#tab9:checked ~ #content9,
+#tab10:checked ~ #content10,
+#tab11:checked ~ #content11 {
+display: block;
+}
+
+/* 조원 프로필 */
+
+.person_title {
+    width: 20%;
+    margin: 37.5%;
+    text-align: center;
+    font-size: 28px;
+    color: dimgray;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.person_title img{
+    display: block;
+    margin: 0 auto;
+}
+
+.screen_container {
+    font-family: 'nanumsquare';
+    width: 100%;
+}
+
+.screen_person:nth-child(2n){
+    padding-left: 90px;
+}
+
+.screen_person {
+    width: 610px;
+    height: 284px;
+    padding-bottom: 140px;
+    float: left;
+}
+
+.personal_imgbox {
+    height: 284px;
+    width:200px;
+    float: left;
+}
+
+.personal_info {
+    background-color: #ffffff;
+    display: inline-block;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, .15);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 284px;
+    width: 610px;
+}
+
+.personal_info img {
+    display: block;
+    float: left;
+}
+
+.personal_info_text {
+    display: inline-block;
+    vertical-align: top;
+    width: 380px;
+    height: 284px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 30px;
+    line-height: 28px;
+}
+
+.personal_info_text .personal_name {
+    width: 320px;
+    font-weight: 900;
+    font-size: 22px;
+    margin-top: 14px;
+    margin-bottom: 26px;
+    padding: 10px;
+    color: black;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, .15);
+    border-radius: 8px;
+    line-height: normal;
+}
+
+.personal_info_text span {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 15px;
+    color: darkgrey;
+}
+
+.personal_info_text > *{
+    margin-bottom: 8px;
+    padding-left: 10px;
+    color: #555;
+}
+
+/* 하단 */
+
+#footer {
+    width: 100%;
+    height: 75px; /* footer의 높이 */
+    font-size: 13px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 1.8;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

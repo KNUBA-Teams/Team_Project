@@ -2,152 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <style>
-        #body-wrapper {
-            min-height: 100%;
-            position: relative;
-        }
-
-        #body-content {
-            padding-bottom: 75px; /* footer의 높이 */
-        }
-
-        #footer {
-            width: 100%;
-            height: 75px; /* footer의 높이 */
-            position: absolute;
-            font-size: 13px;
-            bottom: 0;
-            left: 0;
-            background-color: black;
-            color: white;
-            text-align: center;
-            line-height: 1.8;
-            margin:0 auto;
-            text-align:center;
-        }
-
-        #screen1{
-            width: 49.7%;
-            min-height: 300px;
-            height: 100%;
-            text-align: center;
-            float: left;
-        }
-
-        #screen2{
-            width: 49.7%;
-            min-height: 300px;
-            height: 100%;
-            text-align: center;
-            float: right;
-        }
-
-        #screen_left{
-            width: 33.3%;
-            height: 400px;
-            text-align: center;
-            float: left;
-        }
-
-        #screen_person{
-            width: 100%;
-            height: 200px;
-            text-align: center;
-        }
-
-        body {
-            color: #555;
-            background: #ffffff;
-            margin:0;
-            padding: 0;
-            box-sizing: border-box;}
-
-        h1 {
-            margin: 0;
-            padding: 22px 0;
-            font-weight: 600;
-            text-align: center;}
-
-        p {
-            margin: 0 0 20px;
-            line-height: 1.5;}
-
-        .main {
-            min-width: 320px;
-            max-width: 100%;
-            padding: 50px;
-            margin: 0 auto;
-            background: #ffffff;}
-        
-        .logo {
-            position: absolute;
-            top: 0px;}
-
-        section {
-            display: none;
-            padding: 20px 0 0;
-            border-top: 1px solid #c7d8ff;
-            background: #ffffff;
-            min-height: 380px;
-            height: 100%;
-            width: 100%  }
-
-        /*라디오버튼 숨김*/
-        input {
-            display: none;}
-
-        label {
-            display: inline-block;
-            margin: 0 0 -1px;
-            padding: 15px 25px;
-            font-weight: 600;
-            text-align: center;
-            color: #bbb;
-            border: 1px solid transparent;}
-
-        label:hover {
-            color: #2e9cdf;
-            cursor: pointer;}
-
-        /*input 클릭시, label 스타일*/
-        input:checked + label {
-            color: #2685c1;
-            border: 1px solid #c7d8ff;
-            border-top: 2px solid #2e9cdf;
-            border-bottom: 1px solid #ffffff;}
-
-        #tab1:checked ~ #content1,
-        #tab2:checked ~ #content2,
-        #tab3:checked ~ #content3,
-        #tab4:checked ~ #content4,
-        #tab5:checked ~ #content5,
-        #tab6:checked ~ #content6,
-        #tab7:checked ~ #content7,
-        #tab8:checked ~ #content8,
-        #tab9:checked ~ #content9,
-        #tab10:checked ~ #content10,
-        #tab11:checked ~ #content11 {
-            display: block;}
-    </style>
+    <link href="static/styles.css" rel="stylesheet">
     <title>대구 폭염 예측 SYSTEM</title>
 </head>
 <body>
-    <div class="logo" style="right:0px">
-        <img src="static/mark2.png" alt="My Image" width="120" height="100">
-    </div>
     <div id="body-wrapper">
         <div id="body-content">
-            <div >
-                <h1><font size=30pt face='맑은고딕'>대구지역 폭염분석</font></h1>
-            </div>
-            <div class="logo" style="left:0px">
-                <a id="logo" href="/" width="400" height="100">
-                    <img src="static/mark1.png" alt="My Image" width="400" height="100">
+            <div class="title">
+                <a id="logo" href="/">
+                    <img src="static/mark2.png" alt="My Image" width="150" height="120" id="logo">
                 </a>
+                <div class="title-txt-container">
+                    <div class="title-txt">
+                        <h1><face='나눔스퀘어'>대구지역 폭염분석</h1>
+                        <h2>Heatwave Analysis & Prediction in Daegu</h2>
+                    </div>
+                </div>
+
+                <div class="coop-logo-container">
+                    <div class="coop-logo">
+                        <div class="knu">KNU</div>
+                        <div class="winitec">WINITEC</div>
+                    </div>
+                </div>
             </div>
+            
             <hr noshade style="background:#c7d8ff; border-color:#c7d8ff">
-            <div class="main">
+
+            <div class="main" style="margin: 0px 70px 0px 70px">
                 <input id="tab1" type="radio" name="tabs" checked> <!--디폴트 메뉴-->
                 <label for="tab1">Main</label>
 
@@ -216,7 +98,7 @@
                 <section id="content2">
                     <p>
                         <div>
-                            <iframe allowfullscreen="True" 
+                            <iframe allowfullscreen="True"
                             title="데이터 비주얼리제이션 가설1" style="display: block; width: 1400px; height: 4027px; visibility: visible;"
                             src="https://public.tableau.com/views/12_16547573156030/1_1?:language=ko-KR&:display_count=n&:origin=viz_share_link:showVizHome=no:embed=true"
                             ></iframe>
@@ -301,76 +183,117 @@
 
                 <section id="content10">
                     <p>
+                        <div>
                             <iframe allowfullscreen="True" 
                             title="데이터 비주얼리제이션 가설 9" style="display: block; width: 1400px; height: 663px; visibility: visible;"
                             src="https://public.tableau.com/views/1_16546890937580/1_1?:language=ko-KR&:display_count=n&:origin=viz_share_link:showVizHome=no:embed=true"
                             ></iframe>
+                        </div>
                     </p>
                 </section>
 
-                <section id="content11">
-                    <p>
-                        <div id="screen_left">
-                            <div id="screen_person" style="background-color: #ececff; color: #0000ff;">
-                                <b>구민지</b><br>
-                                <div style="float: left; margin-left: 10px; margin-right: 10px;">
-                                    <img src="static/KMJ.jpg" alt="KMJ" width="150" height="170px">
+                <section id="content11" style="overflow: hidden;">
+                    <div class="person_title">
+                        <img src="static/team_2.png" width="80" height="80">
+                        Project Members
+                    </div>
+                    <div class="screen_container">
+                        <div class="screen_person">
+                            <div class="personal_info">
+                                <div class="personal_imgbox">
+                                    <img src="static/KMJ.jpg" alt="KMJ" width="200" height="284px">
                                 </div>
-                                <div style="float: left; color:#5555ff; text-align: left;">
-                                    역할<br>&nbsp-가설4,8,9<br>&nbsp-모델링<br>&nbsp-취침<br>&nbsp-술
-                                </div>
-                            </div>
-                            <div id="screen_person" style="background-color: #ffffff; color: #0000ff;">
-                                <b>서석정</b><br>
-                                <div style="float: left; margin-left: 10px; margin-right: 10px;">
-                                    <img src="static/SSJ.jpg" alt="SSJ" width="150" height="170px">
-                                </div>
-                                <div style="float: left; color:#5555ff; text-align: left;">
-                                    역할<br><br>모델링<br>취침<br>-던-
-                                </div>
-                            </div>
-                        </div>
-                        <div id="screen_left">
-                            <div id="screen_person" style="background-color: #ffffff; color: #0000ff;">
-                                <b>김형우</b><br>
-                                <div style="float: left; margin-left: 10px; margin-right: 10px;">
-                                    <img src="static/KHW2.jpg" alt="KHW" width="150px" height="170px">
-                                </div>
-                                <div style="float: left; color:#5555ff; text-align: left;">
-                                    역할<br>가설2<br>모델링<br>짜장<br>카레
-                                </div>
-                            </div>
-                            <div id="screen_person" style="background-color: #ececff; color: #0000ff;">
-                                <b>이은혜</b><br>
-                                <div style="float: left; margin-left: 10px; margin-right: 10px;">
-                                    <img src="static/LEH.jpg" alt="LEH" width="150" height="170px">
-                                </div>
-                                <div style="float: left; color:#5555ff; text-align: left;">
-                                    역할<br>가설3,10<br>모델링<br>사무<br>달팽이
+                                <div class="personal_info_text">
+                                    <div class="personal_name">구민지<span>KOO MIN-JI</span></div>
+                                    <div class="position">역할</div>
+                                    <div class="achieve">가설 3, 7</div>
+                                    <div class="main_role">모델링</div>
+                                    <div class="sub_role">취침</div>
+                                    <div class="other">잠</div>
                                 </div>
                             </div>
                         </div>
-                        <div id="screen_left">
-                            <div id="screen_person" style="background-color: #ececff; color: #0000ff;">
-                                <b>박종원</b><br>
-                                <div style="float: left; margin-left: 10px; margin-right: 10px;">
-                                    <img src="static/PJW.jpg" alt="PJW" width="150" height="170px">
+
+                        <div class="screen_person">
+                            <div class="personal_info">
+                                <div class="personal_imgbox">
+                                    <img src="static/KHW2.jpg" alt="KHW" width="200" height="284px">
                                 </div>
-                                <div style="float: left; color:#5555ff; text-align: left;">
-                                    역할<br>집에 가고 싶다<br>프로젝트<br>작업<br>일
-                                </div>
-                            </div>
-                            <div id="screen_person" style="background-color: #ffffff; color: #0000ff;">
-                                <b>임낙현</b><br>
-                                <div style="float: left; margin-left: 10px; margin-right: 10px;">
-                                    <img src="static/LNH.jpg" alt="LNH" width="150" height="170px">
-                                </div>
-                                <div style="float: left; color:#5555ff; text-align: left;">
-                                    역할<br>가설1<br>모델링<br>술<br>소주
+                                <div class="personal_info_text">
+                                    <div class="personal_name">김형우<span>KIM HYEONG-WOO</span></div>
+                                    <div class="position">역할</div>
+                                    <div class="achieve">가설 3, 7</div>
+                                    <div class="main_role">모델링</div>
+                                    <div class="sub_role">취침</div>
+                                    <div class="other">잠</div>
                                 </div>
                             </div>
                         </div>
-                    </p>
+                        
+                        <div class="screen_person">
+                            <div class="personal_info">
+                                <div class="personal_imgbox">
+                                    <img src="static/PJW.jpg" alt="PJW" width="200" height="284px">
+                                </div>
+                                <div class="personal_info_text">
+                                    <div class="personal_name">박종원<span>PARK JONG-WON</span></div>
+                                    <div class="position">역할</div>
+                                    <div class="achieve">가설 3, 7</div>
+                                    <div class="main_role">모델링</div>
+                                    <div class="sub_role">취침</div>
+                                    <div class="other">잠</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="screen_person">
+                            <div class="personal_info">
+                                <div class="personal_imgbox">
+                                    <img src="static/SSJ.jpg" alt="SSJ" width="200" height="284px">
+                                </div>
+                                <div class="personal_info_text">
+                                    <div class="personal_name">서석정<span>SEO SEOK-JEONG</span></div>
+                                    <div class="position">역할</div>
+                                    <div class="achieve">가설 3, 7</div>
+                                    <div class="main_role">모델링</div>
+                                    <div class="sub_role">취침</div>
+                                    <div class="other">잠</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="screen_person">
+                            <div class="personal_info">
+                                <div class="personal_imgbox">
+                                    <img src="static/LEH.jpg" alt="LEH" width="200" height="284px">
+                                </div>
+                                <div class="personal_info_text">
+                                    <div class="personal_name">이은혜<span>LEE EUN-HYE</span></div>
+                                    <div class="position">역할</div>
+                                    <div class="achieve">가설 3, 7</div>
+                                    <div class="main_role">모델링</div>
+                                    <div class="sub_role">취침</div>
+                                    <div class="other">잠</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="screen_person">
+                            <div class="personal_info">
+                                <div class="personal_imgbox">
+                                    <img src="static/LNH.jpg" alt="LNH" width="200" height="284px">
+                                </div>
+                                <div class="personal_info_text">
+                                    <div class="personal_name">임낙현<span>LIM NAK-HYUN</span></div>
+                                    <div class="position">역할</div>
+                                    <div class="achieve">가설 3, 7</div>
+                                    <div class="main_role">모델링</div>
+                                    <div class="sub_role">취침</div>
+                                    <div class="other">잠</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
             </div>
