@@ -19,7 +19,7 @@ df_daegu = pd.read_csv('./dataset/daegu_regionXY.csv')
 df_daegu.dropna(inplace=True)
 drop_list = df_daegu[df_daegu['1단계'] != '대구광역시'].index
 df_daegu.drop(drop_list, inplace=True)
-df_daegu.drop(['1단계','2단계','경도(시)','경도(분)','경도(초)','위도(시)','위도(분)','위도(초)','경도(초/100)','위도(초/100)'], axis=1, inplace=True)
+df_daegu.drop(['1단계','2단계','경도(시)','경도(분)','경도(초)','위도(시)','위도(분)','위도(초)'], axis=1, inplace=True)
 
 while(True):
     # 현재 시각
@@ -47,6 +47,8 @@ while(True):
             region = rows[0]
             nx = rows[1]
             ny = rows[2]
+            long = rows[3]
+            lat = rows[4]
 
             # api를 JSON형식으로 읽어와서 Parsing
             res = requests.get(base_url+serviceKey+'&pageNo=1&numOfRows=1000&dataType=JSON&base_date='+str(base_year)+str_2words(base_month)+str_2words(base_day)+'&base_time='+str_2words(base_time)+'00&nx='+str(nx)+'&ny='+str(ny), headers=headers)
@@ -64,7 +66,7 @@ while(True):
                     wind_speed = i.get('obsrValue')
             
             # 데이터를 DataFrame에 저장
-            df.loc[len(df)] = [base_year,base_month,base_day,base_time,temp,rain,hum,wind_speed,wind_direction,region]
+            df.loc[len(df)] = [base_year,base_month,base_day,base_time,temp,rain,hum,wind_speed,wind_direction,region,long,lat]
         
         # DF를 local에 저장
         df.to_csv('./output/Daegu_data.csv', index=False)
