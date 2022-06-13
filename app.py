@@ -64,11 +64,11 @@ def home():
 		if temp > 30:
 			Marker([lat, long], icon = folium.Icon(color='red'), popup=str(temp)+'℃ '+region).add_to(m)
 		elif temp > 25:
-			Marker([lat, long], icon = folium.Icon(color='green'), popup=str(temp)+'℃ '+region).add_to(m)
+			Marker([lat, long], icon = folium.Icon(color='orange'), popup=str(temp)+'℃ '+region).add_to(m)
 		elif temp > 20:
-			Marker([lat, long], icon = folium.Icon(color='blue'), popup=str(temp)+'℃ '+region).add_to(m)
+			Marker([lat, long], icon = folium.Icon(color='green'), popup=str(temp)+'℃ '+region).add_to(m)
 		else:
-			Marker([lat, long], icon = folium.Icon(color='white'), popup=str(temp)+'℃ '+region).add_to(m)
+			Marker([lat, long], icon = folium.Icon(color='blue'), popup=str(temp)+'℃ '+region).add_to(m)
 		
 
 	return render_template('layout.html', 
