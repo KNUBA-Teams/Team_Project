@@ -101,11 +101,13 @@
                         </select>
                         <!--선택완료 버튼-->
                         <button type="button" style="color:white; background:#3498DB;" id="process_input">선택완료</button>
-                        <br><br>
-                        <!--버튼 클릭시 출력할 내용-->
-                        <div id="processed_results">
-                                Here we display some output based on the selection
-                        </div>
+                        <!--버튼 클릭시 출력할 내용--><br>
+                        <div style="text-align: left; padding-left: 100px; color: #000000;">
+                        &emsp;&emsp;&emsp;D-Day&emsp;&emsp;&emsp;D+1&emsp;&emsp;&emsp;&emsp;D+2&emsp;&emsp;&emsp;D+3</div>
+                        <span style="white-space: pre-wrap"
+                            ><div id="processed_results_01" style="text-align: left; padding-left: 100px; color: #333333">
+                                향후 기온이 여기 표시 됩니다.
+                        </div></span>
                     </div>
                 </section>
 
@@ -339,10 +341,9 @@
             $('#process_input').bind('click', function() {    //버튼 클릭 시
                 $.getJSON('/_process_data', {     //_process_data에서 JSON파일을 읽어옴
                     //_process_data에서 읽어갈 항목 저장
-                    selected_class: $('#all_classes').val(),    //all_classes에서 선택된 항목 저장
                     selected_entry: $('#all_entries').val(),    //all_entries에서 선택돈 항목 저장
                 }).success(function(data) {
-                    $('#processed_results').text(data.random_text);    //JSON에서 출력할 내용을 저장
+                    $('#processed_results_01').text(data.result);    //JSON에서 출력할 내용을 저장
                 })
                 return false;
             });
