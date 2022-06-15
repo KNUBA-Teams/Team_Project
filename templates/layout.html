@@ -80,7 +80,6 @@
                     <div id="screen1" style="background-color: #ececff; color: #0000ff; margin-bottom: 30px">
                         <!--flask에서 tempreture 읽어와서 보여줌-->
                         현재 시각 : {{ now }}<br>
-                        예측<br>현재 기온 = {{ now_temp }}
                         {{ map | safe }}
                     </div>
                     <div id="screen2" style="color: #0000ff;">
@@ -106,7 +105,8 @@
                         &emsp;&emsp;&emsp;D-Day&emsp;&emsp;&emsp;D+1&emsp;&emsp;&emsp;&emsp;D+2&emsp;&emsp;&emsp;D+3</div>
                         <span style="white-space: pre-wrap"
                             ><div id="processed_results_01" style="text-align: left; padding-left: 100px; color: #333333">
-                                향후 기온이 여기 표시 됩니다.
+                   향후 기온이 여기 표시 됩니다.
+                  2~3초 딜레이가 있을 수 있습니다.
                         </div></span>
                     </div>
                 </section>
@@ -116,7 +116,7 @@
                         <div>
                             <iframe allowfullscreen="True"
                             title="데이터 비주얼리제이션 가설1" style="display: block; width: 1400px; height: 4027px; visibility: visible;"
-                            src="https://public.tableau.com/views/12_16547573156030/1_1?:language=ko-KR&:display_count=n&:origin=viz_share_link:showVizHome=no:embed=true"
+                            src="https://public.tableau.com/shared/BTHXTJNN5?:display_count=n&:origin=viz_share_link:showVizHome=no:embed=true"
                             ></iframe>
                         </div>
                     </p>
@@ -220,12 +220,12 @@
                                     <img src="static/KMJ.jpg" alt="KMJ" width="200" height="284px">
                                 </div>
                                 <div class="personal_info_text">
-                                    <div class="personal_name">구민지<span>KOO MIN-JI</span></div>
-                                    <div class="position">역할</div>
-                                    <div class="achieve">가설 3, 7</div>
-                                    <div class="main_role">모델링</div>
-                                    <div class="sub_role">취침</div>
-                                    <div class="other">잠</div>
+                                    <div class="personal_name">구민지<span>KOO MIN JI</span></div>
+                                    <div class="position">가설 4, 6, 7, 8 분석</div>
+                                    <div class="achieve">.</div>
+                                    <div class="main_role">LSTM 모델 학습</div>
+                                    <div class="sub_role">전처리</div>
+                                    <div class="other">데이터 수집</div>
                                 </div>
                             </div>
                         </div>
@@ -236,12 +236,12 @@
                                     <img src="static/KHW2.jpg" alt="KHW" width="200" height="284px">
                                 </div>
                                 <div class="personal_info_text">
-                                    <div class="personal_name">김형우<span>KIM HYEONG-WOO</span></div>
-                                    <div class="position">역할</div>
-                                    <div class="achieve">가설 3, 7</div>
-                                    <div class="main_role">모델링</div>
-                                    <div class="sub_role">취침</div>
-                                    <div class="other">잠</div>
+                                    <div class="personal_name">김형우<span>キムラ ヒョン·タ―</span></div>
+                                    <div class="position">가설 2, 3 분석</div>
+                                    <div class="achieve">시각화 (Tableau, seaborn)</div>
+                                    <div class="main_role">PPT 제작</div>
+                                    <div class="sub_role">크롤링</div>
+                                    <div class="other">LSTM 모델 학습</div>
                                 </div>
                             </div>
                         </div>
@@ -252,12 +252,12 @@
                                     <img src="static/PJW.jpg" alt="PJW" width="200" height="284px">
                                 </div>
                                 <div class="personal_info_text">
-                                    <div class="personal_name">박종원<span>PARK JONG-WON</span></div>
-                                    <div class="position">역할</div>
-                                    <div class="achieve">가설 3, 7</div>
-                                    <div class="main_role">모델링</div>
-                                    <div class="sub_role">취침</div>
-                                    <div class="other">잠</div>
+                                    <div class="personal_name">박종원<span>PARK JONG WON</span></div>
+                                    <div class="position">가설 5 분석</div>
+                                    <div class="achieve">지도 데이터 시각화 (GeoJSON, folium)</div>
+                                    <div class="main_role">git 형상관리</div>
+                                    <div class="sub_role">다중선형회귀 모델링</div>
+                                    <div class="other">발표를 통한 대중 선동</div>
                                 </div>
                             </div>
                         </div>
@@ -268,12 +268,12 @@
                                     <img src="static/SSJ.jpg" alt="SSJ" width="200" height="284px">
                                 </div>
                                 <div class="personal_info_text">
-                                    <div class="personal_name">서석정<span>SEO SEOK-JEONG</span></div>
-                                    <div class="position">역할</div>
-                                    <div class="achieve">가설 3, 7</div>
-                                    <div class="main_role">모델링</div>
-                                    <div class="sub_role">취침</div>
-                                    <div class="other">잠</div>
+                                    <div class="personal_name">서석정<span>SEO SEOK JEONG</span></div>
+                                    <div class="position">API 데이터 실시간 수집</div>
+                                    <div class="achieve">데이터 전처리</div>
+                                    <div class="main_role">웹 구성 (Flask, HTML, Javascript, folium)</div>
+                                    <div class="sub_role">GCP 서버 배포 (gunicorn, nginx)</div>
+                                    <div class="other">MLP 모델 학습</div>
                                 </div>
                             </div>
                         </div>
@@ -284,12 +284,12 @@
                                     <img src="static/LEH.jpg" alt="LEH" width="200" height="284px">
                                 </div>
                                 <div class="personal_info_text">
-                                    <div class="personal_name">이은혜<span>LEE EUN-HYE</span></div>
-                                    <div class="position">역할</div>
-                                    <div class="achieve">가설 3, 7</div>
-                                    <div class="main_role">모델링</div>
-                                    <div class="sub_role">취침</div>
-                                    <div class="other">잠</div>
+                                    <div class="personal_name">이은혜<span>LEE EUN HYE</span></div>
+                                    <div class="position">가설 3, 9 분석</div>
+                                    <div class="achieve">.</div>
+                                    <div class="main_role">데이터 수집</div>
+                                    <div class="sub_role">전처리 및 시각화</div>
+                                    <div class="other">LSTM 모델 학습</div>
                                 </div>
                             </div>
                         </div>
@@ -300,12 +300,12 @@
                                     <img src="static/LNH.jpg" alt="LNH" width="200" height="284px">
                                 </div>
                                 <div class="personal_info_text">
-                                    <div class="personal_name">임낙현<span>LIM NAK-HYUN</span></div>
-                                    <div class="position">역할</div>
-                                    <div class="achieve">가설 3, 7</div>
-                                    <div class="main_role">모델링</div>
-                                    <div class="sub_role">취침</div>
-                                    <div class="other">잠</div>
+                                    <div class="personal_name">임낙현<span>LIM NAK HYUN</span></div>
+                                    <div class="position">가설 1 분석</div>
+                                    <div class="achieve">EDA 및 전처리</div>
+                                    <div class="main_role">시각화 (Tableau, matplotlib)</div>
+                                    <div class="sub_role">DB 관리 (PostgreSQL)</div>
+                                    <div class="other">LSTM 모델 학습</div>
                                 </div>
                             </div>
                         </div>
