@@ -194,17 +194,20 @@ display: block;
 
 .screen_container {
     font-family: 'nanumsquare';
-    width: 100%;
+    width: 50%;
+    float: left;
 }
 
 .screen_person:nth-child(2n){
-    padding-left: 90px;
+    float: right;
+    padding-right: 30px;
 }
 
 .screen_person {
     width: 610px;
     height: 284px;
     padding-bottom: 140px;
+    padding-left: 30px;
     float: left;
 }
 
