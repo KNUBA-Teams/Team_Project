@@ -78,7 +78,26 @@
 
                 <section id="content1" style="overflow: hidden;">
                     <div id="screen1" style="background-color: #ececff; color: #0000ff; margin-bottom: 30px">
-                        <!--flask에서 tempreture 읽어와서 보여줌-->
+                        
+                        <div style="width: 100%;">
+                            <div id="pin_icon">
+                                <img src="static/icon_red.png" alt="red" width="20" height="20">
+                                30℃ 이상
+                            </div>
+                            <div id="pin_icon">
+                                <img src="static/icon_orange.png" alt="orange" width="20" height="20">
+                                25℃ ~ 30℃
+                            </div>
+                            <div id="pin_icon">
+                                <img src="static/icon_green.png" alt="green" width="20" height="20">
+                                20℃ ~ 25℃
+                            </div>
+                            <div id="pin_icon">
+                                <img src="static/icon_blue.png" alt="blue" width="20" height="20">
+                                20℃ 이하
+                            </div>
+                        </div>
+                        <!--flask에서 map 읽어와서 보여줌-->
                         현재 시각 : {{ now }}<br>
                         {{ map | safe }}
                     </div>
@@ -222,8 +241,8 @@
                                 <div class="personal_info_text">
                                     <div class="personal_name">구민지<span>KOO MINJI</span></div>
                                     <div class="position">가설 4, 6, 7, 8 분석</div>
-                                    <div class="achieve">시각화 (Tableau)</div>
-                                    <div class="main_role">LSTM 모델 학습</div>
+                                    <div class="achieve">LSTM 모델 학습</div>
+                                    <div class="main_role">시각화 (Tableau)</div>
                                     <div class="sub_role">전처리</div>
                                     <div class="other">데이터 수집</div>
                                 </div>

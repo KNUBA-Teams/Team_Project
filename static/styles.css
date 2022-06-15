@@ -102,6 +102,12 @@ h2 {
     padding-bottom:30px;
 }
 
+#pin_icon{
+    width: 25%;
+    text-align: center;
+    float: left;
+}
+
 body {
 color: #555;
 background: #ffffff;
