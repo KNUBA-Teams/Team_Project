@@ -111,6 +111,7 @@ h2 {
 body {
 color: #555;
 background: #ffffff;
+background-image: url('back.png');
 margin:0;
 padding: 0;
 box-sizing: border-box;}
@@ -130,7 +131,6 @@ section {
 display: none;
 padding: 20px 0 0;
 border-top: 1px solid #c7d8ff;
-background: #ffffff;
 min-height: 380px;
 height: 100%;
 width: 100%
